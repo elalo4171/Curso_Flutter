@@ -1,23 +1,8 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
+# Created by https://www.gitignore.io/api/flutter,windows
+# Edit at https://www.gitignore.io/?templates=flutter,windows
 
-# Visual Studio Code related
-.vscode/
-
+### Flutter ###
 # Flutter/Dart/Pub related
 **/doc/api/
 .dart_tool/
@@ -25,7 +10,7 @@
 .packages
 .pub-cache/
 .pub/
-/build/
+build/
 
 # Android related
 **/android/**/gradle-wrapper.jar
@@ -68,3 +53,31 @@
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.gitignore.io/api/flutter,windows
