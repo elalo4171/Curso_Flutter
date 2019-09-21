@@ -13,17 +13,15 @@ import 'package:flutter/material.dart';
    @override
    Widget build(BuildContext context) {
      return MaterialApp(
-       debugShowCheckedModeBanner: false,
+       debugShowCheckedModeBanner: false, //Quita la barra de debug 
        title: 'Componentes App',
        //home: HomaPage(),
-       initialRoute: '/',
-        routes: getApplicationRoutes(),
+       initialRoute: '/', //Se define la ruta por default
+        routes: getApplicationRoutes(), //Se agregan las rutas para que la app sepa con que rutas cuenta(Desde otro archivo)
         onGenerateRoute: (RouteSettings settings ){
-
           print(settings.name);
-
           return MaterialPageRoute(
-            builder: (BuildContext context)=>AlertPage()
+            builder: (BuildContext context)=>AlertPage()  //En caso de que no se encentre una ruta lo mandara aqui
           );
         },
      );
