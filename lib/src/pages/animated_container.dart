@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+
 
 class AnimatedContainerPage extends StatefulWidget {
   AnimatedContainerPage({Key key}) : super(key: key);
@@ -22,7 +24,9 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
 
       ),
       body: Center(
-        child: Container(
+        child: AnimatedContainer(
+          duration: Duration( seconds: 1),
+          curve: Curves.fastOutSlowIn,
           width: _width,
           height: _heigth,
           decoration: BoxDecoration(
@@ -42,9 +46,18 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
   }
 
   void _animacion(){
-          _width+=50;
-          _heigth+=55;
-          _color= Colors.amberAccent;
+  final random= Random();
+
+
+          _width= random.nextInt(300).toDouble();
+          _heigth= random.nextInt(300).toDouble();
+          _color= Color.fromRGBO
+          (random.nextInt(255),
+           random.nextInt(255), 
+           random.nextInt(255), 
+           1);
+           _borderRadius= 
+           BorderRadius.circular(random.nextInt(100).toDouble());
           setState(() {
             
           });
