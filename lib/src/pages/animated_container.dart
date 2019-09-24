@@ -35,14 +35,18 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.play_arrow),
         onPressed: (){
-          _width=150;
-          _heigth=80;
+          _animacion();
+        },
+      ),
+    );
+  }
+
+  void _animacion(){
+          _width+=50;
+          _heigth+=55;
           _color= Colors.amberAccent;
           setState(() {
             
           });
-        },
-      ),
-    );
   }
 }
