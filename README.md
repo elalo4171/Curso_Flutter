@@ -144,7 +144,12 @@ TextField(
       },                                    
     );
 ```
+Para correos y contrasenas hay algo cuenta con un keyboardType y obscureText
 
+```
+ keyboardType: TextInputType.emailAddress, 
+ obscureText: true,
+```
 
 
 
