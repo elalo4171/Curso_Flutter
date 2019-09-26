@@ -118,7 +118,32 @@ child: AnimatedContainer(
           duration: Duration( seconds: 1),
            curve: Curves.fastOutSlowIn,
 ```
+# TextField
+Los textField son los inputs de texto para manejar las entradas de nuestra aplicacion estos cuentan con una gran cantidad de personalizacion como se puede ver en el siguiente ejemplo
+```
+TextField(
+      textCapitalization: TextCapitalization.sentences,   
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0)
+        ),
+        counter: Text("Letras ${_nombre.length}"),
+        hintText: "Nombre de la persona",
+        labelText: "Nombre",
+        helperText: "Solo es el nombre",
+        suffixIcon: Icon(Icons.accessibility),
+        icon: Icon(Icons.account_circle),
 
+      ),  
+      onChanged: (valor){
+        _nombre=valor;
+        setState(() {
+          
+        });
+        print(_nombre);
+      },                                    
+    );
+```
 
 
 
@@ -137,3 +162,8 @@ Control + espacio sirve para ver los datos que puede recibir una Widget
 >git pull
 >git add .
 >git commit -m "Se agrego el avatar"
+
+
+
+
+

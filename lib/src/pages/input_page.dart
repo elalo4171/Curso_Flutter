@@ -22,6 +22,8 @@ String _nombre="";
           children: <Widget>[
             _crearInput(),
             Divider(),
+            _crearEmail(),
+            Divider(),
             _crearPersona(),
             
           ], 
@@ -62,5 +64,30 @@ String _nombre="";
       
     );
     
+  }
+
+  Widget _crearEmail() {
+    return TextField(
+      textCapitalization: TextCapitalization.sentences,   
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0)
+        ),
+        counter: Text("Letras ${_nombre.length}"),
+        hintText: "Nombre de la persona",
+        labelText: "Nombre",
+        helperText: "Solo es el nombre",
+        suffixIcon: Icon(Icons.accessibility),
+        icon: Icon(Icons.account_circle),
+
+      ),  
+      onChanged: (valor){
+        _nombre=valor;
+        setState(() {
+          
+        });
+        print(_nombre);
+      },                                    
+    );
   }
 }

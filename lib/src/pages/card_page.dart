@@ -93,6 +93,7 @@ class CardPage extends StatelessWidget {
                  ]
                 ),
                 child: ClipRRect(
+                
                   borderRadius: BorderRadius.circular(30.0),
                  child: card,),
               );
