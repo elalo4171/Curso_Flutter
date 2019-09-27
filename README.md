@@ -148,13 +148,36 @@ Para correos y contrasenas hay algo cuenta con un keyboardType y obscureText
 
 ```
  keyboardType: TextInputType.emailAddress, 
-
-```
-
-```
  obscureText: true,
 ```
+# DataPicker
+El DataPicker es una forma de seleccionar una fecha al regresar un FUTURE se necesita el *asyn* y el *await* en este ejemplo se usa un textfiel y cuando lo presionas 
+>OnTap(){
+    
+>  }
 
+manda la siguiente funcion: 
+```
+ _selectDate(BuildContext context) async{
+
+     DateTime picked = await showDatePicker(
+       locale: Locale('es','ES'),
+       context: context,
+       initialDate: new DateTime.now(),
+       firstDate: new DateTime(2018),
+       lastDate: new DateTime(2025),
+
+     );
+
+     if(picked != null){
+       setState(() {
+        _fecha= ""+picked.day.toString()+"/"+picked.month.toString() +"/"+picked.year.toString();
+        _inputFieldDateController.text=_fecha;
+       });
+     }
+
+  }
+```
 
 
 # Atajos 
