@@ -11,6 +11,9 @@ class _InputPageState extends State<InputPage> {
 String _nombre="";
 String _email="";
 String _fecha="";
+String _optSeleccionanda='Volar';
+
+List<String> _poderes=['Volar', 'Rayos x', 'Aliento', 'Fuerza', "Hola"];
 TextEditingController _inputFieldDateController = new TextEditingController();
 
   @override
@@ -30,6 +33,8 @@ TextEditingController _inputFieldDateController = new TextEditingController();
             _crearPassword(),
             Divider(),
             _crearDate(context),
+            Divider(),
+            _crearDrowpdown(),
             Divider(),
             _crearPersona(),
 
@@ -71,6 +76,7 @@ TextEditingController _inputFieldDateController = new TextEditingController();
     return ListTile(
       title: Text("Nombre es: $_nombre"),
       subtitle: Text('Email: $_email'),
+      trailing: Text(_optSeleccionanda),
       
     );
     
@@ -149,9 +155,9 @@ TextEditingController _inputFieldDateController = new TextEditingController();
      DateTime picked = await showDatePicker(
        locale: Locale('es','ES'),
        context: context,
-       initialDate: new DateTime.now(),
-       firstDate: new DateTime(2018),
-       lastDate: new DateTime(2025),
+       initialDate: new DateTime(1998),
+       firstDate: new DateTime(1950),
+       lastDate: new DateTime(2000),
 
      );
 
@@ -162,6 +168,46 @@ TextEditingController _inputFieldDateController = new TextEditingController();
        });
      }
 
+  }
+
+  List<DropdownMenuItem<String>> getOpcionesDropdown(){
+
+    List<DropdownMenuItem<String>> lista = new List();
+
+    _poderes.forEach((poder){
+
+      lista.add(DropdownMenuItem(
+        child: Text(poder),
+        value: poder,
+      ));
+
+    });
+    return lista;
+
+  }
+
+  Widget _crearDrowpdown() {
+
+    return Row(
+      children: <Widget>[
+        Icon(Icons.select_all),
+        SizedBox(width: 30.0,),
+        DropdownButton(
+          
+      items: getOpcionesDropdown(),
+      value: _optSeleccionanda,
+      onChanged: (opt){
+        setState(() {
+         _optSeleccionanda=opt;
+         
+        });
+      },
+    )
+      ],
+    );
+    
+    
+    
   }
 
 

@@ -178,6 +178,48 @@ manda la siguiente funcion:
 
   }
 ```
+# DropdownButton
+Un DropdownButton es un boton mejor conocido como ComboBox por otros lenguajes, para usarlo se necesita crear una lista 
+```
+List<String> _poderes=['Volar', 'Rayos x', 'Aliento', 'Fuerza', "Hola"];
+
+List<DropdownMenuItem<String>> getOpcionesDropdown(){
+
+    List<DropdownMenuItem<String>> lista = new List();
+
+    _poderes.forEach((poder){
+
+      lista.add(DropdownMenuItem(
+        child: Text(poder),
+        value: poder,
+      ));
+
+    });
+    return lista;
+
+  }
+```
+Con estas lista llenaremos el DropdownButton como se muestra acontinuacion, se coloco dentro de un ROW para poner un Icon a su lado
+
+```
+return Row(
+      children: <Widget>[
+        Icon(Icons.select_all),
+        SizedBox(width: 30.0,),
+        DropdownButton(
+          
+      items: getOpcionesDropdown(),
+      value: _optSeleccionanda,
+      onChanged: (opt){
+        setState(() {
+         _optSeleccionanda=opt;
+         
+        });
+      },
+    )
+      ],
+    );
+```
 
 
 # Atajos 
