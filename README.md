@@ -221,7 +221,71 @@ return Row(
     );
 ```
 
+# CheckBox & Switch
 
+Nos sirve para manejar opciones de tipo boolean y necesita forzosamente 2 metodo en *Value:* y el *OnChange:*
+
+```
+CheckboxListTile(
+      value: _bloquarCheck,
+      onChanged: (valor){
+      setState(() {
+       _bloquarCheck=valor; 
+      });
+      },
+      title: Text('Bloquiar slider: '),
+      );
+```
+
+El codigo es el mismo solo se cambiaria el widget por SwitchListTile para poner un switch
+
+# ListView & Scroll 
+El ListViwe.Builder nos permite cargar datos conforme los vamos utilizando
+```
+ListView.builder(
+      controller: _scrollController,
+      itemCount: _listaNumeros.length,
+      itemBuilder: (BuildContext context, int index){
+
+        final imagen = _listaNumeros[index];
+        return FadeInImage(
+          image: NetworkImage('https://picsum.photos/id/$imagen/800/600'),
+          placeholder: AssetImage('assets/jar-loading.gif'),
+        );
+      },
+    );
+```
+en este ejemplo usamos imagenes traidas de internet
+Necesit6a una lista la cual iniciamos en el initState 
+
+```
+ @override
+  void initState() {
+    
+    // TODO: implement initState
+    super.initState();
+
+    _agregar10();
+
+    _scrollController.addListener((){
+      
+      if(_scrollController.position.pixels==_scrollController.position.maxScrollExtent){
+        _agregar10();
+      }
+
+    });
+  }
+```
+
+ya que esta declarada como vacia por lo tanto no se puede tener su longitud y tronaria el ListView
+
+
+Tambien usamos el ScrollController que nos permite que cuando llegamos al final poder agregar mas elementos 
+```
+ScrollController  _scrollController= new ScrollController();
+  List<int> _listaNumeros = new List();
+  int _ultimoItem=0;
+```
 # Atajos 
 >Ctrl+. 
 
