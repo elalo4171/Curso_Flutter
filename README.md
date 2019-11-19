@@ -105,6 +105,7 @@ actions: <Widget>[
 Sirve para poner imagenes asi como para poner otra de mientras carga la imagen en caso de que sea traiada de internet con *network*
 
 ```
+
 FadeInImage(
           image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/StanLeeChrisEvansCCJuly2011.jpg/375px-StanLeeChrisEvansCCJuly2011.jpg'),
           placeholder: AssetImage('assets/jar-loading.gif'),
